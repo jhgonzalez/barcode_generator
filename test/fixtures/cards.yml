@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  part_no: MyString
+  description: MyString
+  from_loc: MyString
+  to_loc: MyString
+  bin_qty: 1
+
+two:
+  part_no: MyString
+  description: MyString
+  from_loc: MyString
+  to_loc: MyString
+  bin_qty: 1

@@ -1,0 +1,42 @@
+// Place all the styles related to the Card controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#part_no_card_no
+{
+background-color:#33CC00;
+font-weight:bold;
+height:72px;
+width:384;
+font:arial,30px;
+}
+
+.all
+{
+text-align:center;
+width:384px;
+height:72px;
+font:arial,50px;
+}
+
+.table1
+{
+text-align:center;
+float:left;
+width:300px;
+}
+
+.table2
+{
+text-align:center;
+width:300px;
+}
+
+@media print{
+	div.info, div#links{
+		display: none;
+	}
+}
+
+#container{
+	
+}

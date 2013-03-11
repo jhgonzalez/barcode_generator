@@ -1,0 +1,43 @@
+<% count = @card.start%>
+<% @card.finish.times do %>
+<table border="0" cellspacing="5" cellpadding="5" class="table">
+	<tr>
+	<tr>
+		<td id="part_no_card_no" class="all">
+			<%= @card.part_no %>
+			&nbsp
+			&nbsp
+			<%= count %> /
+			<%= @card.finish %>
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<%= image_tag "#{@card.part_no}" + "-" + "#{count}" + "-" + "#{@card.finish}" + ".png" %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= @card.description %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= @card.from_loc %>
+			-
+			<%= @card.to_loc %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			Cantidad en Bin: <%= @card.bin_qty %>  EA
+		</td>
+	</tr>
+		
+		</td>
+	</tr>
+
+	</tr>
+</table>
+<% count += 1 %>
+<% end %>

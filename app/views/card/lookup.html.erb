@@ -1,0 +1,34 @@
+<div>
+<h1>Tarjetas Registradas</h1>
+	
+	<table class="listing" summary='Card list' cellspacing="5">
+		<tr class="header" align="center">
+			<th>No Parte</th>
+			<th>Descripcion</th>
+			<th>Proviene De</th>
+			<th>Se Dirige A</th>
+			<th>Cantidad en Bin</th>
+			<th>No Inicial</th>
+			<th>No Final</th>
+			<th>Opciones</th>
+		</tr>
+		<% @cards.each do |c| %>
+		<tr align="center">
+			<td><%= c.part_no %></td>
+			<td><%= c.description %></td>
+			<td><%= c.from_loc %></td>
+			<td><%= c.to_loc %></td>
+			<td><%= c.bin_qty %></td>
+			<td><%= c.start %></td>
+			<td><%= c.finish %></td>
+			<td class="actions">
+			<%= link_to("Modificar", {:action => 'edit', :id => c.id}, :class => 'back-link') %>
+			<%= link_to("Imprimir", {:action => 'print', :id => c.id}, :class => 'back-link') %>
+			<%= link_to("Eliminar", {:action => 'destroy', :id => c.id}, :class => 'back-link') %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+</br>
+<%= link_to("<< Crear Tarjeta", {:controller => 'card', :action => 'new'}, :class => 'back-link') %>

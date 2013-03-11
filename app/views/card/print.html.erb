@@ -1,0 +1,45 @@
+<div id="links">
+	<%= link_to "Regresar al Listado", :action => :lookup %>
+	</br></br>
+	<%= link_to "Imprimir", '#', onclick: "printpage()"%>
+</div>
+</br>
+<div id="container">
+	<% count = @card.start %>
+	<% @card.finish.times do %>
+	<table border="0" cellspacing="1" cellpadding="0" class="<%= count%2==1 ? 'table1' : 'table2' %>">
+		<tr id="part_no_card_no">
+			<td class="all"><%= @card.part_no %>
+				&nbsp
+			    &nbsp
+			    <%= count %> /
+			    <%= @card.finish %>
+			</td>
+		</tr>
+		<tr>
+			<td class="all">
+			<%= image_tag "#{@card.part_no}" + "-" + "#{count}" + "-" + "#{@card.finish}" + ".png" %>
+			</td>
+		<tr>
+			<td class="all"><%= @card.description %></td>
+		</tr>
+		<tr>
+			<td class="all">
+				<%= @card.from_loc %>
+				&nbsp
+				-
+				&nbsp
+				<%= @card.to_loc %> 
+				&nbsp
+				&nbsp
+			Cant.
+			&nbsp
+			<%= @card.bin_qty%>
+			&nbsp
+			EA
+			</td>
+		</tr>
+	</table>
+	<% count += 1 %>
+	<% end %>
+</div>

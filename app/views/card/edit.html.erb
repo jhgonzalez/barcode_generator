@@ -1,0 +1,32 @@
+<%= link_to("Listar Tarjetas", {:controller => 'card', :action => 'lookup'})%>
+
+<div>
+	<h2>Modificar Tarjeta</h2>
+	<%= form_for(:card, :url => {:action => 'update', :id => @card.id}) do |f| %>
+	
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr>
+			<th>No Parte</th>
+			<th>Descripcion</th>
+			<th>Proviene De</th>
+			<th>Se Dirige A</th>
+			<th>Cantidad en Bin</th>
+			<th>No Inicial</th>
+			<th>No Final</th>
+		</tr>
+		<tr>
+			<td><%= f.text_field(:part_no) %></td>
+			<td><%= f.text_field(:description) %></td>
+			<td><%= f.text_field(:from_loc) %></td>
+			<td><%= f.text_field(:to_loc) %></td>
+			<td><%= f.text_field(:bin_qty) %></td>
+			<td><%= f.text_field(:start, :value => 1) %></td>
+			<td><%= f.text_field(:finish) %></td>
+		</tr>
+	</table>
+	
+	<div>
+		<%= submit_tag("Actualizar") %>
+	</div>
+	<%end%>
+</div>

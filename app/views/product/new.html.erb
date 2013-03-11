@@ -1,0 +1,23 @@
+<div class="product edit">
+	<h2>Registrar Numero de Parte</h2>
+	
+  <%= form_for(:product, :url => {:action => 'create'}) do |f|%>
+	
+	<table summary="Product form fields">
+		<tr>
+			<th>No de Parte</th>
+			<th>Descripcion</th>
+		</tr>
+		<tr>
+			<td><%= f.text_field(:part_no) %></td>
+			<td><%= f.text_field(:description) %></td>
+		</tr>
+	</table>
+	
+	<div class="form-buttons">
+		<%= submit_tag("Registrar")%>
+	</div>
+  <% end %>
+</br>
+<%= link_to("<< Regresar al Menu", {:controller => 'home', :action => 'index'}, :class => 'back-link') %>
+</div>

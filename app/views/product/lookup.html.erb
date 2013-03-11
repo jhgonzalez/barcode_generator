@@ -1,0 +1,22 @@
+<div>
+<h1>Modelos Registrados</h1>
+	
+	<table class="listing" summary='Product list'>
+		<tr class="header">
+			<th>No Parte</th>
+			<th>Descripcion</th>
+		</tr>
+		<% @products.each do |p| %>
+		<tr>
+			<td><%= p.part_no %></td>
+			<td><%= p.description %></td>
+			<td class="actions">
+			<%= link_to("Modificar", {:action => 'edit', :id => p.id}, :class => 'back-link') %>
+			<%= link_to("Eliminar", {:action => 'delete', :id => p.id}, :class => 'back-link') %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+</br>
+<%= link_to("<< Regresar al Menu", {:controller => 'home', :action => 'index'}, :class => 'back-link') %>

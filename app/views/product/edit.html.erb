@@ -1,0 +1,21 @@
+<%= link_to("<< Regresar al Menu", {:controller => 'home', :action => 'index'}, :class => 'back-link') %>
+
+<div class="product edit">
+	<h2>Modificar Numero de Parte</h2>
+	
+  <%= form_for(:product, :url => {:action => 'update', :id => @product.id}) do |f|%>
+	
+	<table summary="Product form fields">
+		<tr>
+			<th>No de Parte</th>
+			<th>Descripcion</th>
+			<td><%= f.text_field(:part_no) %></td>
+			<td><%= f.text_field(:description) %></td>
+		</tr>
+	</table>
+	
+	<div class="form-buttons">
+		<%= submit_tag("Actualizar")%>
+	</div>
+  <% end %>
+</div>

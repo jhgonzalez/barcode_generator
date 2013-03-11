@@ -1,0 +1,2 @@
+module BarcodeImgHelper
+end

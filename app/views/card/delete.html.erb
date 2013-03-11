@@ -1,0 +1,16 @@
+<div class="product delete">
+	<h2>Eliminar Tarjeta</h2>
+	
+	<%= form_for(:card, :url => {:action => 'destroy', :id => @card.id}) do |f| %>
+		
+		<p>Estas seguro que deseas eliminar esta tarjeta?</p>
+		
+		<p class="reference-name"><%= @card.part_no %></p>
+		
+		<div class="form-buttons">
+			<%= submit_tag("Eliminar")%>
+		</div>
+		
+	<%end%>
+		
+</div>

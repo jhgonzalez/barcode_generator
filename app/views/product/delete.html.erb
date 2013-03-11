@@ -1,0 +1,18 @@
+<%= link_to("<< Regresar al Menu", {:controller => 'home', :action => 'index'}, :class => 'back-link') %>
+
+<div class="product delete">
+	<h2>Eliminar Numero de Parte</h2>
+	
+	<%= form_for(:product, :url => {:action => 'destroy', :id => @product.id}) do |f| -%>
+		
+		<p>Estas seguro que deseas eliminar el No Parte?</p>
+		
+		<p class="reference-name"><%= @product.part_no %></p>
+		
+		<div class="form-buttons">
+			<%= submit_tag("Eliminar No Parte")%>
+		</div>
+		
+	<%end%>
+		
+</div>
