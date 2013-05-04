@@ -15,7 +15,8 @@ class CodeController < ApplicationController
       barcode.to_image_with_data.write("app/assets/barcodes/#{file_name}.png")
       start += 1
     end
+    system('mv /home/isdept/Dropbox/rails/barcode_generator/app/assets/barcodes/*.png /home/isdept/Dropbox/barcodes/')
+    redirect_to(:action => 'new')
   end
-  system('cp *.png /home/isdept/rails/IT/BarCodes')
-  redirect_to(:action => new, :notice 'Ok')
+  
 end

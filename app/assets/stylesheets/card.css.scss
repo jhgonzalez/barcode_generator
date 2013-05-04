@@ -1,42 +1,102 @@
 // Place all the styles related to the Card controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#part_no_card_no
-{
-background-color:#33CC00;
-font-weight:bold;
-height:72px;
-width:384;
-font:arial,30px;
+@page{
+	size:8.5in 11in;
 }
 
-.all
-{
-text-align:center;
-width:384px;
-height:72px;
-font:arial,50px;
+#bottom {
+	font-size:20px;
 }
 
-.table1
-{
-text-align:center;
-float:left;
-width:300px;
-}
-
-.table2
-{
-text-align:center;
-width:300px;
-}
-
-@media print{
-	div.info, div#links{
-		display: none;
-	}
+#desc{
+	font-size:15px;
 }
 
 #container{
-	
+width:8.5in 11in;
+}
+
+.div1
+{
+position:relative;
+padding:2px 10px;
+float:left;
+text-align:center;
+margin-left:0 5px;
+width:300px;
+height:280px;
+font-family:Arial,Helvetica,sans-serif;
+list-style-type:none;
+page-break-before:always;
+}
+
+.div2
+{
+position:relative;
+padding:2px 10px;
+float:right;
+text-align:center;
+width:300px;
+height:280px;
+font-family:Arial,Helvetica,sans-serif;
+list-style-type:none;
+page-break-before:always;
+}
+
+.div3
+{
+	position:relative;
+	padding:2px 10px;
+	float:left;
+	text-align:center;
+	width:300px;
+	height:280px;
+	font-family:Arial,Helvetica,sans-serif;
+	list-style-type:none;
+}
+
+.div4
+{
+	position:relative;
+	padding:2px 10px;
+	float:right;
+	text-align:center;
+	width:300px;
+	height:280px;
+	font-family:Arial,Helvetica,sans-serif;
+	list-style-type: none;
+}
+
+.div5
+{
+	position:relative;
+	padding:2px 10px;
+	float:left;
+	text-align:center;
+	width:300px;
+	height:280px;
+	font-family:Arial,Helvetica,sans-serif;
+	list-style-type: none;
+	page-break-after:always;
+	margin-bottom:65px;
+}
+
+.div6
+{
+	position:relative;
+	padding:2px 10px;
+	float:right;
+	text-align:center;
+	width:300px;
+	height:280px;
+	font-family:Arial,Helvetica,sans-serif;
+	list-style-type: none;
+	page-break-after:always;
+	margin-bottom:65px;
+}
+@media print{
+	div.info, div#links{
+		display:none;
+	}
 }

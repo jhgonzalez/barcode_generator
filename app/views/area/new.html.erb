@@ -1,0 +1,24 @@
+<%= link_to("Listar Lazos", {:controller => 'area', :action => 'lookup'})%>
+
+<div>
+	<h2>Crear Lazo</h2>
+	
+	<form action="create" method="get">
+		
+		<table border="0" cellspacing="5" cellpadding="5">
+			<tr>
+				<th>Nombre del Lazo</th>
+				<th>Color</th>
+			</tr>
+			<tr>
+				<td><input type="text" name="name"></td>
+				<td><input type="color" name="color"><br></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Crear Lazo"></td>
+			</tr>
+
+		</table>
+	</form>
+	
+</div>

@@ -1,3 +1,4 @@
+<%= link_to("Menu Principal", {:controller => :home, :action => :index}) %>
 <div>
 <h1>Tarjetas Registradas</h1>
 	
@@ -10,6 +11,7 @@
 			<th>Cantidad en Bin</th>
 			<th>No Inicial</th>
 			<th>No Final</th>
+			<th>Index</th>
 			<th>Opciones</th>
 		</tr>
 		<% @cards.each do |c| %>
@@ -21,8 +23,9 @@
 			<td><%= c.bin_qty %></td>
 			<td><%= c.start %></td>
 			<td><%= c.finish %></td>
+			<td><%= c.card_index%></td>
 			<td class="actions">
-			<%= link_to("Modificar", {:action => 'edit', :id => c.id}, :class => 'back-link') %>
+		<!-- # <%= link_to("Modificar", {:action => 'edit', :id => c.id}, :class => 'back-link') %> -->
 			<%= link_to("Imprimir", {:action => 'print', :id => c.id}, :class => 'back-link') %>
 			<%= link_to("Eliminar", {:action => 'destroy', :id => c.id}, :class => 'back-link') %>
 			</td>

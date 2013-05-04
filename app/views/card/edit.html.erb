@@ -10,23 +10,39 @@
 			<th>Descripcion</th>
 			<th>Proviene De</th>
 			<th>Se Dirige A</th>
-			<th>Cantidad en Bin</th>
-			<th>No Inicial</th>
-			<th>No Final</th>
 		</tr>
 		<tr>
 			<td><%= f.text_field(:part_no) %></td>
 			<td><%= f.text_field(:description) %></td>
 			<td><%= f.text_field(:from_loc) %></td>
 			<td><%= f.text_field(:to_loc) %></td>
+		</tr>
+		<tr>
+			<th>Cantidad en Bin</th>
+			<th>No Inicial</th>
+			<th>No Final</th>
+			<th>Area</th>
+		</tr>
 			<td><%= f.text_field(:bin_qty) %></td>
 			<td><%= f.text_field(:start, :value => 1) %></td>
 			<td><%= f.text_field(:finish) %></td>
+			<td><%= f.collection_select(:area_id, Area.all, :id, :name) %></td>
+		</tr>
+		<tr>
+			<th>Index</th>
+		</tr>
+		<tr>
+			<td><%= f.text_field(:card_index)%></td>
+		</tr>
+		<br \>
+		<tr>
+			<td>
+				<div>
+					<%= submit_tag("Modificar tarjeta") %>
+				</div>
+			</td>
 		</tr>
 	</table>
-	
-	<div>
-		<%= submit_tag("Actualizar") %>
-	</div>
 	<%end%>
+	
 </div>

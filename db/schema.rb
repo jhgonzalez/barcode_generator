@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130221070653) do
+ActiveRecord::Schema.define(:version => 20130425233103) do
+
+  create_table "areas", :force => true do |t|
+    t.string   "name"
+    t.string   "color"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "cards", :force => true do |t|
     t.string   "part_no"
@@ -24,6 +31,8 @@ ActiveRecord::Schema.define(:version => 20130221070653) do
     t.string   "barcode"
     t.integer  "start"
     t.integer  "finish"
+    t.integer  "area_id"
+    t.string   "card_index"
   end
 
 end

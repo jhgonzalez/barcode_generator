@@ -1,0 +1,23 @@
+<%= link_to("Listar Lazos", {:controller => 'area', :action => 'lookup'})%>
+
+<div>
+	<h2>Modificar Lazo</h2>
+	<%= form_for(:area, :url => {:action => 'update', :id => @area.id}) do |f| %>
+	
+	<table border="0" cellspacing="5" cellpadding="5">
+		<tr>
+			<th>Nombre del Lazo</th>
+			<th>Color</th>
+		</tr>
+		<tr>
+			<td><%= f.text_field(:name) %></td>
+			<td><input type="color" name="color" value="<%= @area.color %>"<br></td>
+		</tr>
+	</table>
+	
+	<div>
+		<%= submit_tag("Modificar Lazo") %>
+	</div>
+	<%end%>
+	
+</div>

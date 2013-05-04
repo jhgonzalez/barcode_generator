@@ -1,6 +1,7 @@
 #require 'rubygems'
 require 'barby'
-require 'barby/barcode/code_39'
+# require 'barby/barcode/code_39'
+require 'barby/barcode/code_128'
 require 'barby/outputter/rmagick_outputter'
 
 #Extension to include barcode data below the image
@@ -47,7 +48,7 @@ class CardController < ApplicationController
   
   def print
     @card = Card.find(params[:id])
-    render :layout => nil
+    # render :layout => nil
   end
 
   def edit
@@ -80,7 +81,7 @@ class CardController < ApplicationController
     #card = Card.find(params[:id])
     start = @card.start
     @card.finish.times do
-      file_name = "#{@card.part_no}" + "-" + "#{start}" + "-" + "#{@card.finish}"
+      file_name = @card.part_no.to_s + "-" + start.to_s + "-" + @card.finish.to_s + "-" + @card.card_index.to_s
       File.delete("app/assets/barcodes/#{file_name}.png")
       start += 1
     end
@@ -91,8 +92,8 @@ class CardController < ApplicationController
     start = @card.start
     finish = @card.finish
     finish.times do
-      file_name = @card.part_no + "-" + start.to_s + "-" + finish.to_s
-      barcode = Barby::Code39.new(file_name)
+      file_name = @card.part_no + "-" + start.to_s + "-" + finish.to_s + "-" + @card.card_index
+      barcode = Barby::Code128B.new(file_name)
       barcode.to_image_with_data.write("app/assets/barcodes/#{file_name}.png")
       start += 1
     end

@@ -1,4 +1,12 @@
 BarcodeGenerator::Application.routes.draw do
+  get "loop/new"
+
+  get "loop/edit"
+
+  get "loop/lookup"
+
+  get "loop/delete"
+
   root :to => "home#index"
   match ':controller(/:action(/:id))(.:format)'
 
